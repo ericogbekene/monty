@@ -48,4 +48,9 @@ typedef struct instruction_s
 
 /* function prototypes */
 stack_t *push_node(stack_t **stack, int n);
+stack_t *pop_node(stack_t **stack, unsigned int line_number);
+ssize_t check_the_op(char *op, stack_t **stack, unsigned int n);
+void nop(void);
+size_t print_nodes(stack_t **stack, unsigned int n);
+
 #endif /* MONTY_H */

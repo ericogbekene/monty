@@ -3,7 +3,7 @@
 int main(int argc, char **argv)
 {
 	FILE *fileDesc;
-	int lineNum = 0, i = 0, insertData = 0;
+	int lineNum = 0, insertData = 0;
 	char *inputStr = NULL;
 	size_t num = 0;
 	ssize_t nread = 0;
@@ -32,25 +32,34 @@ int main(int argc, char **argv)
 			perror("Error allocating memory");
 		}
 		customArray[0] = strtok(inputStr, delim);
-		while (customArray[i] != NULL)
+		/* something wrong with this tokenization */
+		/*while (customArray[i] != NULL)
 		{
 			customArray[i] = strtok(NULL, delim);
 			i++;
-		}
+		}*/
 		printf("opcode is %s\n", customArray[0]);
 		lineNum++;
 		printf("Line number : %d\n", lineNum);
 	}
 
+	 /* ssize_t opReturn = check_the_op(customArray[0], &currentStack, unsigned int n); */
+	/* call check function to perform op */
+
 	if (strcmp(customArray[0], "Push") == 0)
 	{
-		insertData = atoi(strtok(NULL, "\n"));
-		currentStack = malloc(sizeof(stack_t));
+		insertData = atoi(strtok(NULL, " "));
+		/*currentStack = malloc(sizeof(stack_t));*/ /*no need to malloc */
+		/*if (currentStack == NULL)*/
+		/*{
+			perror("Error allocating memory\n");
+		}*/
+		currentStack = push_node(&currentStack, insertData);
 		if (currentStack == NULL)
 		{
-			perror("Error allocating memory\n");
+			perror("Error adding to stack\n");
+			exit(EXIT_FAILURE);
 		}
-		currentStack = push_node(&currentStack, insertData);
 	}
 
 	return (EXIT_SUCCESS);
