@@ -31,13 +31,15 @@ The below data structure is used for the project and is included in the header
  * Description: doubly linked list node structure
  * for stack, queues, LIFO, FIFO
  */
+
 typedef struct stack_s
 {
         int n;
         struct stack_s *prev;
         struct stack_s *next;
 } stack_t;
-/**
+
+/*
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
  * @f: function to handle the opcode
@@ -45,6 +47,7 @@ typedef struct stack_s
  * Description: opcode and its function
  * for stack, queues, LIFO, FIFO
  */
+
 typedef struct instruction_s
 {
         char *opcode;
