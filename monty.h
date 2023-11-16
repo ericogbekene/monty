@@ -52,5 +52,6 @@ void pop_node(stack_t **stack, unsigned int line_number);
 ssize_t check_the_op(char *op, stack_t **stack, unsigned int n);
 void nop(void);
 void print_nodes(stack_t **stack, unsigned int n);
+void print_nodes(stack_t **stack, unsigned int line_number);
 
 #endif /* MONTY_H */
