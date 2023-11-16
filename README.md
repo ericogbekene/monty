@@ -1,10 +1,10 @@
-#C - Stacks, Queues - LIFO, FIFO
+# C - Stacks, Queues - LIFO, FIFO
 Alx Stack and Queues collaborative project done using C - Programming Language
-#Collaborators
+# Collaborators
 * **ADEYEMI MARVELLOUS**
 * **OGBEKENE ERIC**
 
-#Project General Requirements
+# Project General Requirements
 * Allowed editors: vi, vim, emacs
 * All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=c89
 * All your files should end with a new line
@@ -18,7 +18,7 @@ Alx Stack and Queues collaborative project done using C - Programming Language
 * All your header files should be include guarded
 * You are expected to do the tasks in the order shown in the project
 
-#More Info
+# More Info
 **Data structures**
 Please use the following data structures for this project. Don’t forget to include them in your header file.
 The below data structure is used for the project and is included in the header
@@ -51,6 +51,6 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-#Compilation & Output
+# Compilation & Output
 * The code will be compiled this way:
 $ gcc -Wall -Werror -Wextra -pedantic -std=c89 *.c -o monty
