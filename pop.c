@@ -1,6 +1,6 @@
 #include "monty.h"
 
-stack_t *pop_node(stack_t **stack, __attribute__((unused)) unsigned int line_number)
+void pop_node(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 {
 	stack_t *temp;
 	stack_t *nextNode;
@@ -18,7 +18,7 @@ stack_t *pop_node(stack_t **stack, __attribute__((unused)) unsigned int line_num
 	nextNode->prev = NULL;
 	*stack = nextNode;
 
-	return (*stack);
+	/*return (*stack);*/
 
 
 

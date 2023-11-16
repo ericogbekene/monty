@@ -1,13 +1,14 @@
 #include "monty.h"
 
-stack_t *push_node(stack_t **stack, int n)
+void push_node(stack_t **stack, unsigned int n)
 {
 	stack_t *current;
 	stack_t *new_node = malloc(sizeof(stack_t));
 
 	if (new_node == NULL)
 	{
-		return (NULL);
+		perror("Error allocating memory\n");
+		exit(EXIT_FAILURE);
 	}
 	if (*stack == NULL)
 	{
@@ -22,7 +23,5 @@ stack_t *push_node(stack_t **stack, int n)
 	new_node->next = current;
 	current->prev = new_node;
 	*stack = new_node;
-
-	return (*stack);
 
 }
