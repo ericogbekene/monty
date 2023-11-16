@@ -7,12 +7,12 @@
  * Return: pointer to the function associated with opcode
  */
 
-void (*check_func(char *checkOp))(stack_t **stack, unsigned int line_number)
+void (*check_func(char *checkOp))(stack_t **stack, unsigned int line_number, unsigned int value)
 {
 	instruction_t instructions_new[] = {
-		{ "push", push_node },
-		{"pop", pop_node},
-		{"pall", print_nodes},
+		{ "push", &push_node },
+		{"pop", &pop_node},
+		{"pall", &print_nodes},
 		{NULL, NULL}
 	};
 

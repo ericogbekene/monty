@@ -3,13 +3,16 @@
 int main(int argc, char **argv)
 {
 	FILE *fileDesc;
-	int lineNum = 0, insertData = 0;
-	char *inputStr = NULL;
+	int lineNum = 0, insertData = 0, i;
+	char *inputStr = NULL, *token;
 	size_t num = 0;
 	ssize_t nread = 0;
 	char **customArray = NULL;
 	char *delim = " \t\n";
 	stack_t *currentStack;
+
+	(void) currentStack;
+	(void) insertData;
 
 	if (argc != 2)
 	{
@@ -23,44 +26,31 @@ int main(int argc, char **argv)
 		printf("Error opening file");
 	}
 
+	customArray = malloc(sizeof(char *) * 3);
+	if (customArray == NULL)
+	{
+		perror("Error allocating memory\n");
+		exit(EXIT_FAILURE);
+	}
 	/* nread = getline(&inputStr, &num, fileDesc);*/
 	while ((nread = getline(&inputStr, &num, fileDesc)) != -1)
 	{
-		customArray = malloc(sizeof(char *) * 5);
-		if (customArray == NULL)
+		token = strtok(inputStr, delim);
+		i = 0;
+		while (token != NULL)
 		{
-			perror("Error allocating memory");
+			customArray[i++] = token;
+			token = strtok(NULL, delim);
 		}
-		customArray[0] = strtok(inputStr, delim);
-		/* something wrong with this tokenization */
-		/*while (customArray[i] != NULL)
-		{
-			customArray[i] = strtok(NULL, delim);
-			i++;
-		}*/
-		printf("opcode is %s\n", customArray[0]);
+		customArray[i] = NULL;
+		printf("(%d) --> opcode[0] is %s, opcode[1] is %s\n", lineNum, customArray[0], customArray[1]);
 		lineNum++;
 		printf("Line number : %d\n", lineNum);
 	}
 
-	 /* ssize_t opReturn = check_the_op(customArray[0], &currentStack, unsigned int n); */
+	 /* ssize_t opReturn = check_the_op(customArray); */
 	/* call check function to perform op */
 
-	if (strcmp(customArray[0], "Push") == 0)
-	{
-		insertData = atoi(strtok(NULL, " "));
-		/*currentStack = malloc(sizeof(stack_t));*/ /*no need to malloc */
-		/*if (currentStack == NULL)*/
-		/*{
-			perror("Error allocating memory\n");
-		}*/
-		currentStack = push_node(&currentStack, insertData);
-		if (currentStack == NULL)
-		{
-			perror("Error adding to stack\n");
-			exit(EXIT_FAILURE);
-		}
-	}
 
 	return (EXIT_SUCCESS);
 }
