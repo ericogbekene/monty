@@ -3,27 +3,26 @@
 /**
  * print_nodes - prints all nodes in stack
  * @stack: pointer to a stack_t
+ * @line_number: line Number
  *
  * Return: void || no of nodes printed
  */
 
-ssize_t print_nodes(stack_t **stack)
+void print_nodes(stack_t **stack, unsigned int line_number)
 {
-	size_t count = 0;
+	(void) line_number;
+
 	stack_t *current;
 
 	if (*stack == NULL)
 	{
 		perror("List is empty\n");
-		return (-1);
+		exit(EXIT_FAILURE);
 	}
 	current = *stack;
 
 	while (current->next != NULL)
 	{
 		printf("%d\n", current->n);
-		count++;
 	}
-
-	return (count);
 }
