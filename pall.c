@@ -10,9 +10,9 @@
 
 void print_nodes(stack_t **stack, unsigned int line_number)
 {
-	(void) line_number;
-
 	stack_t *current;
+
+	(void) line_number;
 
 	if (*stack == NULL)
 	{

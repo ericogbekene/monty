@@ -48,7 +48,23 @@ int main(int argc, char **argv)
 		printf("Line number : %d\n", lineNum);
 	}
 
-	 /* ssize_t opReturn = check_the_op(customArray); */
+	if (strcmp(customArray[0], "push") == 0)
+	{
+		insertData = atoi(strtok(NULL, delim));
+
+		/* check for valid integer and print errr */
+		push_node(&currentStack, lineNum, insertData);
+	}
+	else if (strcmp(customArray[0], "pall") == 0)
+		print_nodes(&currentStack, lineNum); /*pass lineNumber*/
+/*
+	else
+		if (check_func(customArray, &currentStack, lineNum) == 1)
+		{
+			 failed, print error message
+		}
+*/
+	 /* ssize_t opReturn = check_the_op(**customArray); */
 	/* call check function to perform op */
 
 

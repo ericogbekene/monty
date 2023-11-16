@@ -47,11 +47,10 @@ typedef struct instruction_s
 } instruction_t;
 
 /* function prototypes */
-void push_node(stack_t **stack, unsigned int n);
+void push_node(stack_t **stack, unsigned int line_number, unsigned int data);
 void pop_node(stack_t **stack, unsigned int line_number);
-ssize_t check_the_op(char *op, stack_t **stack, unsigned int n);
-void nop(void);
-void print_nodes(stack_t **stack, unsigned int n);
+int check_func(char **checkOp, stack_t **stack, unsigned int line_number);
 void print_nodes(stack_t **stack, unsigned int line_number);
+
 
 #endif /* MONTY_H */
