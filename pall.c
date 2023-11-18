@@ -16,12 +16,12 @@ void print_nodes(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL)
 	{
-		perror("List is empty\n");
+		fprintf(stderr, "List is empty\n");
 		exit(EXIT_FAILURE);
 	}
 	current = *stack;
 
-	while (current->next != NULL)
+	while (current != NULL)
 	{
 		printf("%d\n", current->n);
 		current = current->next;

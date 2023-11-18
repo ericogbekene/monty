@@ -15,14 +15,14 @@ int main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		printf("Usage: monty file\n");
+		fprintf(stderr, "Usage: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	fileDesc = fopen(argv[1], "r");
 	/* fileDesc = open(argv[1], O_RDONLY); */
 	if (fileDesc == NULL)
 	{
-		printf("Error opening file");
+		fprintf(stderr, "Error opening file %s\n", argv[1]);
 	}
 
 	customArray = malloc(sizeof(char *) * 3);
@@ -58,9 +58,13 @@ int main(int argc, char **argv)
 	else
 		if (check_func(customArray, &currentStack, lineNum) == 1)
 		{
-			 failed, print error message
+			 fprintf(stderr, "failed, print error message");
 		}
 */
 	/* call check function to perform op */
+	for (i = 0; customArray[i] != NULL; i++)
+		free(customArray[i]);
+	free(customArray[i]);
+	fclose(fileDesc);
 	return (EXIT_SUCCESS);
 }
