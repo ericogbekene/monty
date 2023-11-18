@@ -12,18 +12,19 @@ void push_node(stack_t **stack, unsigned int line_number, unsigned int data)
 		perror("Error allocating memory\n");
 		exit(EXIT_FAILURE);
 	}
-	if (*stack == NULL)
-	{
-		new_node->n = data;
-		new_node->prev = NULL;
-		new_node->next = NULL;
-		*stack = new_node;
-	}
+
 	current = *stack;
+
 	new_node->n = data;
 	new_node->prev = NULL;
-	new_node->next = current;
-	current->prev = new_node;
+	new_node->next = NULL;
+
+	if (current != NULL)
+	{
+		new_node->next = current;
+		current->prev = new_node;
+	}
+
 	*stack = new_node;
 
 }
