@@ -24,5 +24,6 @@ void print_nodes(stack_t **stack, unsigned int line_number)
 	while (current->next != NULL)
 	{
 		printf("%d\n", current->n);
+		current = current->next;
 	}
 }
