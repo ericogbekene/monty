@@ -6,7 +6,6 @@ int main(int argc, char **argv)
 	int lineNum = 0, insertData = 0, i;
 	char *inputStr = NULL, *token;
 	size_t num = 0;
-	ssize_t nread = 0;
 	char **customArray = NULL;
 	char *delim = " \t\n";
 	stack_t *currentStack;
@@ -33,7 +32,7 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 	/* nread = getline(&inputStr, &num, fileDesc);*/
-	while ((nread = getline(&inputStr, &num, fileDesc)) != -1)
+	while ((getline(&inputStr, &num, fileDesc)) != -1)
 	{
 		token = strtok(inputStr, delim);
 		i = 0;
@@ -46,17 +45,27 @@ int main(int argc, char **argv)
 		printf("(%d) --> opcode[0] is %s, opcode[1] is %s\n", lineNum, customArray[0], customArray[1]);
 		lineNum++;
 		printf("Line number : %d\n", lineNum);
-	}
 
+		if (strcmp(customArray[0], "push") == 0)
+		{
+			insertData = atoi(customArray[1]);
+			push_node(&currentStack, lineNum, insertData);
+		}
+		else if (strcmp(customArray[0], "pall") == 0)
+		{
+			print_nodes(&currentStack, lineNum);
+		}
+	}
+/*
 	if (strcmp(customArray[0], "push") == 0)
 	{
-		insertData = atoi(strtok(NULL, delim));
+		insertData = atoi(strtok(NULL, delim));*/
 
 		/* check for valid integer and print errr */
-		push_node(&currentStack, lineNum, insertData);
+/*		push_node(&currentStack, lineNum, insertData);
 	}
 	else if (strcmp(customArray[0], "pall") == 0)
-		print_nodes(&currentStack, lineNum); /*pass lineNumber*/
+		print_nodes(&currentStack, lineNum); pass lineNumber*/
 /*
 	else
 		if (check_func(customArray, &currentStack, lineNum) == 1)
