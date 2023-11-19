@@ -115,7 +115,7 @@ where file is the path to the file containing Monty byte code
 * Usage: pint
 * If the stack is empty, print the error message L<line_number>: can't pint, stack empty, followed by a new line, and exit with the status EXIT_FAILURE
 
-2. #pop
+2. # pop
 
 ***Implement the pop opcode.***
 
@@ -126,7 +126,7 @@ where file is the path to the file containing Monty byte code
 * Usage: pop
 * If the stack is empty, print the error message L<line_number>: can't pop an empty stack, followed by a new line, and exit with the status EXIT_FAILURE
 
-3. #swap
+3. # swap
 
 ***Implement the swap opcode.***
 
