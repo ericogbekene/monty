@@ -56,12 +56,12 @@ void mul_node(stack_t **stack, unsigned int line_number)
 }
 
 /**
-  *add_node -  Adds the top two elements of the stack.
+  *mod_node -  Mod the top two elements of the stack.
   *@stack: A pointer to the top of the stack.
   *@line_num: The line number in the monty Bytecode file
   *where the push operation is called.
   */
-void add_node(stack_t **stack, unsigned int line_number)
+void mod_node(stack_t **stack, unsigned int line_number)
 {
 	/*Check if the stack contains less than two elements */
 	if (!stack || !*stack || !(*stack)->next)

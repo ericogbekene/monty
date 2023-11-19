@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * c_push - Pushes a new element onto the stack.
+ * push_node - Pushes a new element onto the stack.
  * @stack: A pointer to the top of the stack.
  * @line_num: The line number in the Monty bytecode file
  * where the push operation is called.
