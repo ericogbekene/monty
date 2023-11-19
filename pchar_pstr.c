@@ -61,14 +61,12 @@ void pstr_op(stack_t **stack, unsigned int line_number)
 
 	/* Print the character at the top of the stack */
 	printf("%c", (*stack)->n);
-
+	/* Stop if the value of the element is 0 */
+	if (!*stack || (*stack)->n == 0)
+		break;
 	/* Remove the top element of the stack */
 	temp = *stack;
 	*stack = (*stack)->next;
 	(*stack)->prev = NULL;
 	free(temp);
-
-	/* Stop if the value of the element is 0 */
-	if (!*stack || (*stack)->n == 0)
-		break;
 }
