@@ -47,7 +47,6 @@ typedef struct instruction_s
 } instruction_t;
 
 /* function prototypes */
-int _strcmp(char *s1, char *s2);
 void push_node(stack_t **stack, unsigned int line_number, const char *n);
 void pop_node(stack_t **stack, unsigned int line_number);
 void check_func(FILE *fileDesc);
