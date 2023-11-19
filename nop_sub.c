@@ -3,20 +3,20 @@
 /**
   *nop_op - Doesn’t do anything.
   *@stack: A double pointer to the top of the stack.
-  *@line_num: The line number in the Monty bytecode file
+  *@line_number: The line number in the Monty bytecode file
   *where the push operation is called
   */
 
-void nop_op(stack_t **stack, unsigned int line_num)
+void nop_op(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
-	(void)line_num;
+	(void)line_number;
 }
 
 /**
   *sub_node -  Subtracts the top two elements of the stack.
   *@stack: A double pointer to the top of the stack.
-  *@line_num: The line number in the monty Bytecode file
+  *@line_number: The line number in the monty Bytecode file
   *where the push operation is called.
   */
 void sub_node(stack_t **stack, unsigned int line_number)
