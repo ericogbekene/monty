@@ -16,17 +16,17 @@ void push_node(stack_t **stack, unsigned int line_number, const char *n)
 	stack_t *new_node = malloc(sizeof(stack_t));
 	int numb = atoi(n);
 
-	if(numb == 0 && *n != '0')
+	if (numb == 0 && *n != '0')
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
-        exit(EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 
 	/*if (new_node == NULL)
-	{
-		fprintf("Error allocating memory\n");
-		exit(EXIT_FAILURE);
-	}*/
+	  {
+	  fprintf("Error allocating memory\n");
+	  exit(EXIT_FAILURE);
+	  }*/
 
 	/*current = *stack;*/
 
@@ -54,20 +54,20 @@ void push_node(stack_t **stack, unsigned int line_number, const char *n)
 
 void print_nodes(stack_t **stack, unsigned int line_number)
 {
-        stack_t *current;
+	stack_t *current;
 
-        (void) line_number;
+	(void) line_number;
 
-       /* if (*stack == NULL)
-        {
-                fprintf(stderr, "List is empty\n");
-                exit(EXIT_FAILURE);
-        }*/
-        current = *stack;
+	/* if (*stack == NULL)
+	   {
+	   fprintf(stderr, "List is empty\n");
+	   exit(EXIT_FAILURE);
+	   }*/
+	current = *stack;
 
-        while (current != NULL)
-        {
-                printf("%d\n", current->n);
-                current = current->next;
-        }
+	while (current != NULL)
+	{
+		printf("%d\n", current->n);
+		current = current->next;
+	}
 }

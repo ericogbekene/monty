@@ -16,7 +16,7 @@ void div_node(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	if((*stack)->n == 0)
+	if ((*stack)->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_number);
 		exit(EXIT_FAILURE);
@@ -41,7 +41,7 @@ void div_node(stack_t **stack, unsigned int line_number)
 void mul_node(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
-	
+
 	/*Check if the stack contains less than two elements */
 	if (!stack || !*stack || !(*stack)->next)
 	{
@@ -76,9 +76,9 @@ void mod_node(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	if((*stack)->n == 0)
+	if ((*stack)->n == 0)
 	{
-		fprintf(stderr, "L%d: division by zero\n", line_number    );
+		fprintf(stderr, "L%d: division by zero\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 

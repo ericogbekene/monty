@@ -2,7 +2,7 @@
 
 /**
  * check_func - function to return funtion of matching opcode
- * @fpr: file to process
+ * @fileDesc: file to process
  *
  */
 
@@ -36,7 +36,7 @@ void check_func(FILE *fileDesc)
 		{NULL, NULL}
 	};
 
-	while((getline_val = getline(&inputStr, &lineNum, fileDesc )) != -1)
+	while ((getline_val = getline(&inputStr, &lineNum, fileDesc)) != -1)
 	{
 		count++;
 		delim = strtok(inputStr, " \t\n");
@@ -44,13 +44,13 @@ void check_func(FILE *fileDesc)
 			continue;
 		for (m = 0; instructions_new[m].opcode; m++)
 		{
-			if(strcmp(delim, instructions_new[m].opcode == 0))
+			if (strcmp(delim, instructions_new[m].opcode) == 0)
 			{
 				instructions_new[m].f(&stack, count);
 				break;
 			}
 		}
-	
+
 
 		if (!instructions_new[m].opcode)
 		{
