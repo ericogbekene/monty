@@ -11,7 +11,7 @@ void _free(stack_t **stack)
 	while (current != NULL)
 	{
 		next_node = current->next;
-		free(curr_node);
+		free(current);
 		current = next_node;
 	}
 	*stack = NULL;
@@ -24,9 +24,9 @@ void _free(stack_t **stack)
  * @stack: doubly linked list
  */
 
-void cleanup(FILE *fp, char *line, stack_t **stack)
+void cleanup(FILE *fileDesc, char *CustomArray, stack_t **stack)
 {
-	free(line);
-	free_stack(stack);
-	fclose(fp);
+	free(CustomArray);
+	_free(stack);
+	fclose(fileDesc);
 }
