@@ -10,7 +10,7 @@
  */
 
 
-void push_node(stack_t **stack, unsigned int line_number, cont char *n)
+void push_node(stack_t **stack, unsigned int line_number, const char *n)
 {
 	/*stack_t *current;*/
 	stack_t *new_node = malloc(sizeof(stack_t));
