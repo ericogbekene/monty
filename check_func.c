@@ -44,7 +44,7 @@ void check_func(FILE *fileDesc)
 			continue;
 		for (m = 0; instructions_new[m].opcode; m++)
 		{
-			if(_strcmp(delim, instructions_new[m].opcode == 0))
+			if(strcmp(delim, instructions_new[m].opcode == 0))
 			{
 				instructions_new[m].f(&stack, count);
 				break;
