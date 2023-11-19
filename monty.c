@@ -1,6 +1,13 @@
 #include "monty.h"
 int main(int argc, char **argv);
 
+/**
+ * main - main function
+ * @argc: argument count
+ * @argv: argument vector
+ * Return: 0 if success
+ */
+
 
 int main(int argc, char **argv)
 {
@@ -18,13 +25,14 @@ int main(int argc, char **argv)
 	if (argc != 2)
 	{
 		fprintf(stderr, "Usage: monty file\n");
-		exit(EXIT_FAILURE);
+		return(EXIT_FAILURE);
 	}
 	fileDesc = fopen(argv[1], "r");
 	/* fileDesc = open(argv[1], O_RDONLY); */
 	if (fileDesc == NULL)
 	{
 		fprintf(stderr, "Error opening file %s\n", argv[1]);
+		return(EXIT_FAILURE)
 	}
 
 	customArray = malloc(sizeof(char *) * 3);
