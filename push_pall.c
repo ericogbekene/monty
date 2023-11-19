@@ -3,7 +3,7 @@
 /**
  * push_node - Pushes a new element onto the stack.
  * @stack: A pointer to the top of the stack.
- * @line_num: The line number in the Monty bytecode file
+ * @line_number: The line number in the Monty bytecode file
  * where the push operation is called.
  * @n: Is a character pointer
  * Return - Always Void
@@ -22,11 +22,11 @@ void push_node(stack_t **stack, unsigned int line_number, const char *n)
         exit(EXIT_FAILURE);
 	}
 
-	if (new_node == NULL)
+	/*if (new_node == NULL)
 	{
 		fprintf("Error allocating memory\n");
 		exit(EXIT_FAILURE);
-	}
+	}*/
 
 	/*current = *stack;*/
 
