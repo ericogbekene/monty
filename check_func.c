@@ -6,18 +6,16 @@
  *
  */
 
-void check_func(FILE *fp)
+void check_func(FILE *fileDesc)
 {
 
-	int lineNum = 0, insertData = 0, i;
-	char *inputStr = NULL, *token;
-	size_t num = 0;
-	char **customArray = NULL;
+	size_t lineNum = 0;
+	int m;
+	unsigned int count = 0;
+	char *inputStr = NULL;
+	ssize_t getline_val;
 	char *delim = " \t\n";
-	stack_t *currentStack;
-
-	(void) currentStack;
-	(void) insertData;
+	stack_t *stack = NULL;
 
 
 	instruction_t instructions_new[] = {
@@ -38,17 +36,32 @@ void check_func(FILE *fp)
 		{NULL, NULL}
 	};
 
-	int i = 0;
-
-	while (instructions_new[i].opcode != NULL)
+	while((getline_val = getline(&inputStr, &lineNum, fileDesc )) != -1)
 	{
-		if (strcmp(instructions_new[i].opcode, checkOp[0]) == 0)
+		count++;
+		delim = strtok(inputStr);
+		if (!delim || delim[0] == '#')
+			continue;
+		for (m = 0; instructions_new[m].opcode; m++)
 		{
-			instructions_new[i].f(stack, line_number);
-			return (0);
+			if(_strcmp(delim, instructions_new[m].opcode == 0))
+			{
+				instructions_new[m].f(&stack, count);
+				break;
+			}
 		}
-		i++;
+	
+
+		if (!instructions_new[m].opcode)
+		{
+			fprintf(stderr, "L%d: unknown instruction %s\n", count, delim);
+			cleanup(fileDesc, inputStr, &stack);
+			exit(EXIT_FAILURE);
+		}
+		free(inputStr);
+		inputStr = NULL;
 	}
-	return (1);
+	free(inputStr);
+	_free(&stack);
 
 }
