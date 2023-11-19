@@ -20,6 +20,9 @@ void check_func(FILE *fp)
 		{"div", div_node},
 		{"mul", mul_node},
 		{"mod", mod_node},
+		{"#", h_line},
+		{"pchar", pchar_op},
+		{"pstr", pstr_op},
 		{NULL, NULL}
 	};
 
