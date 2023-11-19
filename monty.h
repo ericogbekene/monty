@@ -47,10 +47,24 @@ typedef struct instruction_s
 } instruction_t;
 
 /* function prototypes */
-void push_node(stack_t **stack, unsigned int line_number, unsigned int data);
+int _strcmp(char *s1, char *s2);
+void push_node(stack_t **stack, unsigned int line_number, const char *n);
 void pop_node(stack_t **stack, unsigned int line_number);
-int check_func(char **checkOp, stack_t **stack, unsigned int line_number);
+void check_func(FILE *fileDesc);
 void print_nodes(stack_t **stack, unsigned int line_number);
-
+void pint_op(stack_t **stack, unsigned int line_number);
+void swap_node(stack_t **stack, unsigned int line_number);
+void add_node(stack_t **stack, unsigned int line_number);
+void div_node(stack_t **stack, unsigned int line_number);
+void mul_node(stack_t **stack, unsigned int line_number);
+void mod_node(stack_t **stack, unsigned int line_number);
+void nop_op(stack_t **stack, unsigned int line_number);
+void sub_node(stack_t **stack, unsigned int line_number);
+void pchar_op(stack_t **stack, unsigned int line_number);
+void pstr_op(stack_t **stack, unsigned int line_number);
+int main(int argc, char **argv);
+void h_line(char *line);
+void _free(stack_t **stack);
+void cleanup(FILE *fileDesc, char *CustomArray, stack_t **stack);
 
 #endif /* MONTY_H */
