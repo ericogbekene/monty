@@ -19,14 +19,14 @@ void _free(stack_t **stack)
 
 /**
  * cleanup - Function to free allocated memory and close the file
- * @fp: File to process
- * @line: Memory to be freed
+ * @fileDesc: File to process
+ * @customArray: Memory to be freed
  * @stack: doubly linked list
  */
 
-void cleanup(FILE *fileDesc, char *CustomArray, stack_t **stack)
+void cleanup(FILE *fileDesc, char *customArray, stack_t **stack)
 {
-	free(CustomArray);
+	free(customArray);
 	_free(stack);
 	fclose(fileDesc);
 }

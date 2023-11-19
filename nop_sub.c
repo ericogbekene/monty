@@ -22,7 +22,6 @@ void nop_op(stack_t **stack, unsigned int line_number)
 void sub_node(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
-	
 	/*Check if the stack contains less than two elements */
 	if (!stack || !*stack || !(*stack)->next)
 	{

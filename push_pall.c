@@ -22,11 +22,13 @@ void push_node(stack_t **stack, unsigned int line_number, const char *n)
 		exit(EXIT_FAILURE);
 	}
 
-	/*if (new_node == NULL)
+	/*
+	 * if (new_node == NULL)
 	  {
 	  fprintf("Error allocating memory\n");
 	  exit(EXIT_FAILURE);
-	  }*/
+	  }
+	  */
 
 	/*current = *stack;*/
 
@@ -58,11 +60,13 @@ void print_nodes(stack_t **stack, unsigned int line_number)
 
 	(void) line_number;
 
-	/* if (*stack == NULL)
+	/*
+	 * if (*stack == NULL)
 	   {
 	   fprintf(stderr, "List is empty\n");
 	   exit(EXIT_FAILURE);
-	   }*/
+	   }
+	   */
 	current = *stack;
 
 	while (current != NULL)
