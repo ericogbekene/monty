@@ -8,6 +8,7 @@
  */
 void pchar_op(stack_t **stack, unsigned int line_number)
 {
+	stact_t *temp;
 	/* Check if the stack is empty */
 	if (!stack || !*stack)
 	{
@@ -25,7 +26,7 @@ void pchar_op(stack_t **stack, unsigned int line_number)
 	printf("%c\n", (*stack)->n);
 
 	/* Remove the top element of the stack */
-	stack_t *temp = *stack;
+	temp = *stack;
 	*stack = (*stack)->next;
 	(*stack)->prev = NULL;
 	free(temp);
@@ -67,7 +68,5 @@ void pstr_op(stack_t **stack, unsigned int line_number)
 
 	/* Stop if the value of the element is 0 */
 	if (!*stack || (*stack)->n == 0)
-	{
 		break;
-	}
 }
