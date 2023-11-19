@@ -39,7 +39,7 @@ void check_func(FILE *fileDesc)
 	while((getline_val = getline(&inputStr, &lineNum, fileDesc )) != -1)
 	{
 		count++;
-		delim = strtok(inputStr);
+		delim = strtok(inputStr, " \t\n");
 		if (!delim || delim[0] == '#')
 			continue;
 		for (m = 0; instructions_new[m].opcode; m++)
