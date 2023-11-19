@@ -16,14 +16,14 @@ int main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		fprintf(stderr, "Usage: monty file\n");
+		fprintf(stderr, "USAGE: monty file\n");
 		return (EXIT_FAILURE);
 	}
 	fileDesc = fopen(argv[1], "r");
 	/* fileDesc = open(argv[1], O_RDONLY); */
 	if (fileDesc == NULL)
 	{
-		fprintf(stderr, "Error opening file %s\n", argv[1]);
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		return (EXIT_FAILURE);
 	}
 
