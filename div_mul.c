@@ -14,7 +14,7 @@ void div_node(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	if((stack)->n == 0)
+	if((*stack)->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_number);
 		exit(EXIT_FAILURE);
@@ -70,7 +70,7 @@ void mod_node(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	if((stack)->n == 0)
+	if((*stack)->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_number    );
 		exit(EXIT_FAILURE)
