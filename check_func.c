@@ -8,6 +8,18 @@
 
 void check_func(FILE *fp)
 {
+
+	int lineNum = 0, insertData = 0, i;
+	char *inputStr = NULL, *token;
+	size_t num = 0;
+	char **customArray = NULL;
+	char *delim = " \t\n";
+	stack_t *currentStack;
+
+	(void) currentStack;
+	(void) insertData;
+
+
 	instruction_t instructions_new[] = {
 		{"pop", pop_node},
 		{"pall", print_nodes},
