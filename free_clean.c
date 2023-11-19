@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
  * _free - Function to free the stacks
  * @stack: doubly linked list to be free
