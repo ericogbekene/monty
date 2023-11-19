@@ -3,7 +3,7 @@
 /**
  * pchar_op - prints the char at the top of the stack, followed by a new line.
  * @stack: A double pointer to the top of the stack.
- * @line_num: The line number in the Monty bytecode file
+ * @line_number: The line number in the Monty bytecode file
  * where the push operation is called.
  */
 void pchar_op(stack_t **stack, unsigned int line_number)
@@ -34,7 +34,7 @@ void pchar_op(stack_t **stack, unsigned int line_number)
 /**
   *pstr_op - Print string starting at the top of stack
   *@stack: A double pointer to top of the stack
-  *@line_num: line number is the Monty bytecode
+  *@line_number: line number is the Monty bytecode
   */
 
 void pstr_op(stack_t **stack, unsigned int line_number)
