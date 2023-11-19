@@ -1,5 +1,6 @@
 #include "monty.h"
 
+void check_func(FILE *fileDesc);
 /**
  * check_func - function to return funtion of matching opcode
  * @fileDesc: file to process
@@ -15,13 +16,13 @@ void check_func(FILE *fileDesc)
 	char *inputStr = NULL;
 	ssize_t getline_val;
 	char *delim = " \t\n";
+	char *dataPart;
 	stack_t *stack = NULL;
 
 
 	instruction_t instructions_new[] = {
 		{"pop", pop_node},
 		{"pall", print_nodes},
-		{"push", push_node},
 		{"pint", pint_op},
 		{"swap", swap_node},
 		{"add", add_node},
@@ -30,7 +31,6 @@ void check_func(FILE *fileDesc)
 		{"div", div_node},
 		{"mul", mul_node},
 		{"mod", mod_node},
-		{"#", h_line},
 		{"pchar", pchar_op},
 		{"pstr", pstr_op},
 		{NULL, NULL}
@@ -42,6 +42,11 @@ void check_func(FILE *fileDesc)
 		delim = strtok(inputStr, " \t\n");
 		if (!delim || delim[0] == '#')
 			continue;
+		if (strcmp(delim, "push") == 0)
+		{
+			dataPart = strtok(NULL, " \t\n");
+			push_node(&stack, count, dataPart);
+		}
 		for (m = 0; instructions_new[m].opcode; m++)
 		{
 			if (strcmp(delim, instructions_new[m].opcode) == 0)
@@ -52,7 +57,7 @@ void check_func(FILE *fileDesc)
 		}
 
 
-		if (!instructions_new[m].opcode)
+		if (!instructions_new[m].opcode && (strcmp(delim, "push") != 0))
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", count, delim);
 			cleanup(fileDesc, inputStr, &stack);

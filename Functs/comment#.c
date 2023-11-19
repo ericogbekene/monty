@@ -8,11 +8,11 @@
 
 void h_line(char *line)
 {
-	while(*line && isspace(*line))
+	while (*line && isspace(*line))
 	{
 		line++;
 	}
-	if(*line == '#')
+	if (*line == '#')
 	{
 		return;
 	}
