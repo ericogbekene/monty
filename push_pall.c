@@ -16,7 +16,7 @@ void push_node(stack_t **stack, unsigned int line_number, const char *n)
 	stack_t *new_node = malloc(sizeof(stack_t));
 	int numb = atoi(n);
 
-	if(num == 0 && *n != '0')
+	if(numb == 0 && *n != '0')
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
         exit(EXIT_FAILURE);
@@ -49,7 +49,7 @@ void push_node(stack_t **stack, unsigned int line_number, const char *n)
  * @stack: pointer to a stack_t
  * @line_number: line Number
  *
- * Return: void || no of nodes printed
+ * Return: void || number of nodes printed
  */
 
 void print_nodes(stack_t **stack, unsigned int line_number)
