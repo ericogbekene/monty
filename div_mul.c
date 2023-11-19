@@ -3,7 +3,7 @@
 /**
   *div_node -  Divide the top two elements of the stack.
   *@stack: A pointer to the top of the stack.
-  *@line_num: The line number in the monty Bytecode file
+  *@line_number: The line number in the monty Bytecode file
   *where the push operation is called.
   */
 void div_node(stack_t **stack, unsigned int line_number)
@@ -33,7 +33,7 @@ void div_node(stack_t **stack, unsigned int line_number)
 /**
   *mul_node -  Multiply the top two elements of the stack.
   *@stack: A double pointer to the top of the stack.
-  *@line_num: The line number in the monty Bytecode file
+  *@line_number: The line number in the monty Bytecode file
   *where the push operation is called.
   */
 void mul_node(stack_t **stack, unsigned int line_number)
@@ -58,7 +58,7 @@ void mul_node(stack_t **stack, unsigned int line_number)
 /**
   *mod_node -  Mod the top two elements of the stack.
   *@stack: A pointer to the top of the stack.
-  *@line_num: The line number in the monty Bytecode file
+  *@line_number: The line number in the monty Bytecode file
   *where the push operation is called.
   */
 void mod_node(stack_t **stack, unsigned int line_number)
