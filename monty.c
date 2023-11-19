@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 	if (fileDesc == NULL)
 	{
 		fprintf(stderr, "Error opening file %s\n", argv[1]);
-		return (EXIT_FAILURE)
+		return (EXIT_FAILURE);
 	}
 
 	check_func(fileDesc);
