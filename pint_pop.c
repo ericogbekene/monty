@@ -6,7 +6,7 @@
  * @line_num: The line number in the Monty bytecode file
  * where the push operation is called.
  */
-void pint_op(stack_t **stack, unsigned int line_num)
+void pint_op(stack_t **stack, unsigned int line_number)
 {
 	if(!*stack || !stack)
 	{
